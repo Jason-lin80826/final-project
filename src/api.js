@@ -51,66 +51,65 @@ export const interceptor = (store) => {
 };
 
 // product
-export const getProducts = () => instance.get('/products/');
-export const deleteProduct = (id) => instance.delete(`/products/${id}/`);
-export const addProduct = (payload) => instance.post('/product/', payload);
-export const getProduct = (id) => instance.get(`/products/${id}/`);
+export const getProducts = () => instance.get('/products');
+export const deleteProduct = (id) => instance.delete(`/products/${id}`);
+export const addProduct = (payload) => instance.post('/product', payload);
+export const getProduct = (id) => instance.get(`/products/${id}`);
 export const updateProduct = (id, payload) =>
-  instance.patch(`/products/${id}/`, payload);
+  instance.patch(`/products/${id}`, payload);
 
 export const getShopProducts = (userId) =>
-  instance.get(`/products-store/${userId}/`);
+  instance.get(`/products-store/${userId}`);
 
 // admin
-export const getAllShop = () => instance.get('/shops/');
-export const getShop = (id) => instance.get(`/shops/${id}/`);
+export const getAllShop = () => instance.get('/shops');
+export const getShop = (id) => instance.get(`/shops/${id}`);
 export const updateShop = (id, payload) =>
-  instance.patch(`/shops/${id}/`, payload);
-export const deleteShop = (id) => instance.delete(`/shops/${id}/`);
+  instance.patch(`/shops/${id}`, payload);
+export const deleteShop = (id) => instance.delete(`/shops/${id}`);
 
 // user
 
 export const registerApi = (payload) =>
   instance.post('/users/register/', payload);
-export const loginApi = (payload) => instance.post('/users/login/', payload);
-export const logoutApi = () => instance.get('/users/logout/');
-export const getAllInfo = () => instance.get('/users/');
-export const getMyInfo = () => instance.get('/user/');
-export const updateMyInfo = (payload) => instance.patch('/user/', payload);
-export const getMeApi = () => instance.get('/users/me/');
-export const updateURL = (payload) => instance.patch('/user-URL/', payload);
-export const getShops = () => instance.get('/users-shops/');
+export const loginApi = (payload) => instance.post('/users/login', payload);
+export const logoutApi = () => instance.get('/users/logout');
+export const getAllInfo = () => instance.get('/users');
+export const getMyInfo = () => instance.get('/user');
+export const updateMyInfo = (payload) => instance.patch('/user', payload);
+export const getMeApi = () => instance.get('/users/me');
+export const updateURL = (payload) => instance.patch('/user-URL', payload);
+export const getShops = () => instance.get('/users-shops');
 
 // productDetail
 export const getDetailId = (payload) =>
   instance.get(
-    `/product-details/${payload.size}/${payload.sweetness}/${payload.ice}/`
+    `/product-details/${payload.size}/${payload.sweetness}/${payload.ice}`
   );
 
 // order-items
-export const addOrderItem = (payload) =>
-  instance.post('/order-items/', payload);
-export const getOrderItems = () => instance.get('/order-items/');
+export const addOrderItem = (payload) => instance.post('/order-items', payload);
+export const getOrderItems = () => instance.get('/order-items');
 export const deleteOrderItem = (payload) =>
-  instance.delete('/order-items/', { data: payload });
-export const getSingleOrderItem = (id) => instance.get(`/order-item/${id}/`);
+  instance.delete('/order-items', { data: payload });
+export const getSingleOrderItem = (id) => instance.get(`/order-item/${id}`);
 export const updateOrderItemDetail = (payload) =>
-  instance.patch('/order-item-detail/', payload);
+  instance.patch('/order-item-detail', payload);
 export const updateOrderItemHistory = (payload) =>
-  instance.patch('/order-items-history/', payload);
+  instance.patch('/order-items-history', payload);
 
 // order
-export const getTotalPriceAmount = () => instance.get(`/orders/`);
-export const updateTotalPriceAmount = () => instance.patch(`/orders/`);
-export const addShoppingCart = () => instance.post('/orders/');
-export const getOrdersHistory = () => instance.get(`/orders-history/`);
-export const getOrderPaid = (id) => instance.get(`/orders/${id}/`);
+export const getTotalPriceAmount = () => instance.get(`/orders`);
+export const updateTotalPriceAmount = () => instance.patch(`/orders`);
+export const addShoppingCart = () => instance.post('/orders');
+export const getOrdersHistory = () => instance.get(`/orders-history`);
+export const getOrderPaid = (id) => instance.get(`/orders/${id}`);
 export const getItemsByOrderId = (order_id) =>
-  instance.get(`/order/${order_id}/`);
+  instance.get(`/order/${order_id}`);
 
 export const getIsPaid = (order_id) =>
   axios.get(
-    `https://da-nai-wei-wei.herokuapp.com/orders-get-is-paid/${order_id}/`,
+    `https://da-nai-wei-wei.herokuapp.com/orders-get-is-paid/${order_id}`,
     config
   );
 // export const getIsPaid = (order_id) =>
